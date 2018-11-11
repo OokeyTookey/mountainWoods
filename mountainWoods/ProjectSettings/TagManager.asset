@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - sheepClose
+  - sheep
+  - sheepObjectCollision
+  - player
   layers:
   - Default
   - TransparentFX
