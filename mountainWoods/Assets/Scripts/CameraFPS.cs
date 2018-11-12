@@ -26,6 +26,7 @@ public class CameraFPS : MonoBehaviour {
         smooth.x = Mathf.Lerp(smooth.x, mouseMov.x, 1f / smoothness);
         smooth.y = Mathf.Lerp(smooth.y, mouseMov.y, 1f / smoothness);
         fpsLook += mouseMov;
+        //this function clamps the camera vertically to a fixed anglw
         fpsLook.y = Mathf.Clamp(fpsLook.y, -90f, 90f);
 
         transform.localRotation = Quaternion.AngleAxis(-fpsLook.y, Vector3.right);
