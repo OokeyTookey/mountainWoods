@@ -20,12 +20,10 @@ public class SheepAi : MonoBehaviour
     void Start()
     {
             currentRotation = transform.rotation.eulerAngles.y;
-
     }
 
     void Update()
     {
-
         transform.Translate((Vector3.forward * Time.deltaTime));
         if (isTouched)
         {
@@ -36,7 +34,7 @@ public class SheepAi : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "sheepObjectCollision")
+        /*if (collision.gameObject.tag == "sheepObjectCollision")
         {
             Debug.Log("Sheep Collided");
             currentRotation = -currentRotation;
@@ -50,10 +48,7 @@ public class SheepAi : MonoBehaviour
             isTouched = true;
            
             Debug.Log("print something");
-
-           
-        //this.transform.LookAt(new Vector3(playerGO.transform.rotation.y))
-        }
+        }*/
     }
 
  
