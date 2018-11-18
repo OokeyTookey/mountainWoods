@@ -1,64 +1,17 @@
 fileFormatVersion: 2
-guid: 506a1b43e3ad4c449b42731907eb9b89
-timeCreated: 1541241358
+guid: b4d28c1942bd987419713ed7e088b7ef
+timeCreated: 1541241359
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Box013
-    100002: Box014
-    100004: Box015
-    100006: Box016
-    100008: Box017
-    100010: Box018
-    100012: Box019
-    100014: Box020
-    100016: Box021
-    100018: //RootNode
-    400000: Box013
-    400002: Box014
-    400004: Box015
-    400006: Box016
-    400008: Box017
-    400010: Box018
-    400012: Box019
-    400014: Box020
-    400016: Box021
-    400018: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: 04 - Default
-    2300000: Box013
-    2300002: Box014
-    2300004: Box015
-    2300006: Box016
-    2300008: Box017
-    2300010: Box018
-    2300012: Box019
-    2300014: Box020
-    2300016: Box021
-    3300000: Box013
-    3300002: Box014
-    3300004: Box015
-    3300006: Box016
-    3300008: Box017
-    3300010: Box018
-    3300012: Box019
-    3300014: Box020
-    3300016: Box021
-    4300000: Box013
-    4300002: Box014
-    4300004: Box015
-    4300006: Box016
-    4300008: Box017
-    4300010: Box018
-    4300012: Box019
-    4300014: Box020
-    4300016: Box021
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 04 - Default
-    second: {fileID: 2100000, guid: 47a91afe51f4eca43970f802dded4d8a, type: 2}
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Rock 3
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
