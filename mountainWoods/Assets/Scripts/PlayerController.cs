@@ -2,28 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     public float speed;
     public float jumpForce;
     public Rigidbody playerRB;
+    public GameObject fenceGate;
+    bool fence = false;
 
-    // Use this for initialization
-    void Start ()
+ 
+    void Start()
     {
-        // this function is called to lock the cursor in game mode
+        
         Cursor.lockState = CursorLockMode.Locked;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+  
+    void Update()
     {
 
-        if(Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown("escape"))
         {
             Cursor.lockState = CursorLockMode.None;
         }
-	}
+    }
 
     private void FixedUpdate()
     {
@@ -47,9 +50,20 @@ public class PlayerController : MonoBehaviour {
             playerRB.AddForce(transform.right * speed);
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.E) && fence)
         {
-            playerRB.AddForce(transform.up * jumpForce);
+            fenceGate.transform.Rotate(0, -90, 0);
+            fence = false;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    { 
+        if (other.gameObject.tag == "fenceGate")
+        {
+            fence = true;
+        }
+    }
+    
+    
 }

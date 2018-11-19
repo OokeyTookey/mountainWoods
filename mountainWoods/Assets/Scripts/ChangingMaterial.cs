@@ -28,13 +28,11 @@ public class ChangingMaterial : MonoBehaviour
             else
                 meshrenders[i] = islandObjects[(greenObjects.Length + islandObjects.Length) - i - 1].GetComponent<MeshRenderer>();
         }
-
-        print("??!");
     }
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.P))
         {
             for (int i = 0; i < meshrenders.Length; i++)
             {
