@@ -28,29 +28,9 @@ public class Flee : MonoBehaviour {
 
         //Truncate is clamping- arrival 
         // look where current velocity is
-        //--------------------------------------------------------------------------------------------------------------------------
+       
 
-        //Vector3 dir = (targetPosition.position - transform.position).normalized;
-
-        //desiredVelo = dir * maxVelo;
-        //steering = desiredVelo - RB.velocity;
-        //RB.velocity = Vector3.ClampMagnitude(RB.velocity, 5);
-
-        //transform.LookAt(new Vector3(targetPosition.position.x, targetPosition.position.y, targetPosition.position.z));
-
-        //transform.position -= transform.forward * 2.0f * Time.deltaTime;
-        //RB.AddForce(-desiredVelo);
-
-        /* Vector3 dir = new Vector3(targetPosition.position.x, targetPosition.position.y, targetPosition.position.z);
-         dir.Normalize();
-
-         transform.LookAt(new Vector3(-dir.x, -dir.y, -dir.z));
-         Debug.DrawRay(transform.position, new Vector3(-dir.x, -dir.y, -dir.z) * 1000);*/
-
-        //transform.rotation = targetPosition.rotation;
-
-
-        if (Vector3.Distance(transform.position, targetPosition.position) < 10)
+        /*if (Vector3.Distance(transform.position, targetPosition.position) < 10)
         {
             Vector3 dir = (transform.position - targetPosition.transform.position);
             dir.Normalize();
@@ -66,7 +46,7 @@ public class Flee : MonoBehaviour {
             //Debug.DrawRay(transform.position, dir * 1000);
 
             transform.position += transform.forward * 2.0f * Time.deltaTime;
-        }
+        }*/
         
     }
 }
