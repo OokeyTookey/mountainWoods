@@ -4,36 +4,34 @@ using UnityEngine;
 
 public class CloudBounce : MonoBehaviour
 {
-
-
-    Vector3 startLocation;
-
-    Vector3 upLocation;
-    Vector3 downLocation;
+    Vector3 startLocation; 
     float distance;
 
     public Vector3 movement;
     public float speed;
 
+    Vector3 movementDirection;
+    Vector3 direction;
+
     void Start()
     {
-        //startLocation = transform.position;
+        startLocation = transform.position;
+        movementDirection = movement;
+        direction = movementDirection;
+        direction.Normalize();
     }
 
-
-    void Update()
+    void FixedUpdate()
     {
-        downLocation = -movement;
-        upLocation = movement;
+        distance = Vector3.Distance(transform.position, movementDirection + startLocation);
 
-        distance = Vector3.Distance(transform.position, upLocation);
-        transform.position += upLocation * speed * Time.deltaTime;
-
-        if (distance <=0)
+        if (distance <= 0.3f)
         {
-            Debug.Log("help");
-            transform.position += downLocation * speed * Time.deltaTime;
+            Debug.Log("help PLEASE ");
+            direction *= -1;
+            movementDirection *= -1;
         }
 
+        transform.position += direction * speed * Time.deltaTime;
     }
 }   
