@@ -165,7 +165,17 @@ ModelImporter:
     4300054: Box014
     4300056: Island1
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #1'
+    second: {fileID: 2100000, guid: c9f16d100a43b28498aae51f5db0b0c3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 226a6e5a2fc80c54b9135c18f7bb8865, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
