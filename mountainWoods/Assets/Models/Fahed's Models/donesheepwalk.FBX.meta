@@ -1,18 +1,47 @@
 fileFormatVersion: 2
-guid: ea068a808618dfd4a87e3d452cc3bdac
-timeCreated: 1543914478
+guid: 629e65874b8831e4f8959d3558fd4bd6
+timeCreated: 1544004740
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: sheep
-    400000: //RootNode
-    400002: sheep
-    2100000: sheepMat
-    2300000: sheep
-    3300000: sheep
-    4300000: sheep
+    100000: Bone001
+    100002: Bone002
+    100004: Bone003
+    100006: Bone004
+    100008: Bone005
+    100010: Bone006
+    100012: Bone007
+    100014: Bone008
+    100016: Bone009
+    100018: Bone010
+    100020: Bone011
+    100022: Bone012
+    100024: Bone013
+    100026: Bone014
+    100028: //RootNode
+    100030: sheep001
+    400000: Bone001
+    400002: Bone002
+    400004: Bone003
+    400006: Bone004
+    400008: Bone005
+    400010: Bone006
+    400012: Bone007
+    400014: Bone008
+    400016: Bone009
+    400018: Bone010
+    400020: Bone011
+    400022: Bone012
+    400024: Bone013
+    400026: Bone014
+    400028: //RootNode
+    400030: sheep001
+    2100000: 'Material #47'
+    4300000: sheep001
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: sheep001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -87,7 +116,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
