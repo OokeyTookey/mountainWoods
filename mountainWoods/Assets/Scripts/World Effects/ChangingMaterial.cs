@@ -25,7 +25,7 @@ public class ChangingMaterial : MonoBehaviour
     GameObject[] islandObjects;
     public Material[] IslandMaterials;
 
-    void Start()
+    /*void Start()
     {
         islandObjects = GameObject.FindGameObjectsWithTag("island");
         firTreeA = GameObject.FindGameObjectsWithTag("FirTreeA");
@@ -37,7 +37,7 @@ public class ChangingMaterial : MonoBehaviour
             if (i < firTreeA.Length)
                 meshrenders[i] = firTreeA[i].GetComponent<MeshRenderer>();
             else
-                meshrenders[i] = islandObjects[(firTreeA.Length + +firTreeB.Length+ islandObjects.Length) - i - 1].GetComponent<MeshRenderer>();
+                meshrenders[i] = islandObjects[(firTreeA.Length  +firTreeB.Length+ islandObjects.Length) - i - 1].GetComponent<MeshRenderer>();
         }
     }
 
@@ -59,9 +59,5 @@ public class ChangingMaterial : MonoBehaviour
                     meshrenders[i].materials = IslandMaterials;
             }
         }
-    }
-
-
-
-
+    }*/
 }
