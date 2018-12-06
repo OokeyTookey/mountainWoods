@@ -10,9 +10,10 @@ public class Flee : MonoBehaviour
     Vector3 desiredVelo;
     float distanceFrom;
     float desiredDistance;
-    float slowingRadius;
+    float slowingRadius = 5;
     public float maxVelo;
     public Transform targetPosition;
+
 
     void Start()
     {
@@ -21,24 +22,26 @@ public class Flee : MonoBehaviour
 
     void Update()
     {
-        desiredDistance = desiredVelo.magnitude;
-
-        //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
-        desiredVelo = (transform.position - targetPosition.position).normalized * maxVelo;
-        steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
-        RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3); //sets the velocity of the 
-        RB.AddForce(steering); //Moves the character based on the set steering behaviour
-
         distanceFrom = (transform.position - targetPosition.position).magnitude; //Calculates the distance between the sheep and position
 
-       /* if (desiredDistance < slowingRadius)
+        /*if (distanceFrom < 10) //If the player is in range
         {
-            desiredVelo = desiredVelo.normalized * maxVelo * (desiredDistance / slowingRadius);
-        }
-        else
-        {
-            // Outside the slowing area.
-            desiredVelo = desiredVelo.normalized * maxVelo;
         }*/
+            desiredDistance = desiredVelo.magnitude;
+            desiredVelo = -(transform.position - targetPosition.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
+            steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
+            RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3); 
+            RB.AddForce(steering); //Moves the character based on the set steering behaviour
+
+             if (desiredDistance < slowingRadius)
+             {
+                 desiredVelo = desiredVelo.normalized * maxVelo * (desiredDistance / slowingRadius);
+             }
+             else
+             {
+                 // Outside the slowing area.
+                 desiredVelo = desiredVelo.normalized * maxVelo;
+             }
+        print(desiredVelo);
     }
 }
