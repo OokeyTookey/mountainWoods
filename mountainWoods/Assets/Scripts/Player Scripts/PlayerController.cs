@@ -14,14 +14,12 @@ public class PlayerController : MonoBehaviour
  
     void Start()
     {
-        
         Cursor.lockState = CursorLockMode.Locked;
     }
 
   
     void Update()
     {
-
         if (Input.GetKeyDown("escape"))
         {
             Cursor.lockState = CursorLockMode.None;
@@ -63,7 +61,5 @@ public class PlayerController : MonoBehaviour
         {
             fence = true;
         }
-    }
-    
-    
+    } 
 }

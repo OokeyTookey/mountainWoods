@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CloudBounce : MonoBehaviour
 {
-    Vector3 startLocation; 
-    float distance;
-
-    public Vector3 movement;
     public float speed;
+    public Vector3 movement;
 
-    Vector3 movementDirection;
+    float distance;
     Vector3 direction;
+    Vector3 startLocation; 
+    Vector3 movementDirection;
 
     void Start()
     {
@@ -24,14 +23,11 @@ public class CloudBounce : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, movementDirection + startLocation);
-
         if (distance <= 0.3f)
         {
-            Debug.Log("help PLEASE ");
             direction *= -1;
             movementDirection *= -1;
         }
-
         transform.position += direction * speed * Time.deltaTime;
     }
 }   
