@@ -23,7 +23,6 @@ public class CloudBounce : MonoBehaviour
     void FixedUpdate()
     {
         distance = Vector3.Distance(transform.position, movementDirection + startLocation);
-
         if (distance <= 0.3f)
         {
             direction *= -1;

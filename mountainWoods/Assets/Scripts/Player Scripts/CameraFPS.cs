@@ -19,6 +19,8 @@ public class CameraFPS : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (Time.timeScale == 1) 
+        {
         var mouseMov = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
 
         mouseMov = Vector2.Scale(mouseMov, new Vector2(sensitivity * smoothness, sensitivity * smoothness));
@@ -31,5 +33,7 @@ public class CameraFPS : MonoBehaviour {
 
         transform.localRotation = Quaternion.AngleAxis(-fpsLook.y, Vector3.right);
         player1.transform.localRotation = Quaternion.AngleAxis(fpsLook.x, player1.transform.up);
+        }
 	}
 }
+
