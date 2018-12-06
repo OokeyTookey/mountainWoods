@@ -34,7 +34,8 @@ public class WanderAI : MonoBehaviour {
     private Vector3 GetWanderForce()
     {
         var circleCenter = velocity.normalized * circleDistance;
-        var displacement = new Vector3(0, -1);
+        // var displacement = new Vector3(0, 1f);
+        var displacement = transform.right * Mathf.Cos(angleChange * Mathf.Deg2Rad) * circleRadius;
         displacement += Quaternion.LookRotation(velocity) * displacement;
 
         wAngle += (Random.value * angleChange) - (angleChange * 0.5f);
