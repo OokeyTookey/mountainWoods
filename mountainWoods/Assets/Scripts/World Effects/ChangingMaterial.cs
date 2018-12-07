@@ -24,20 +24,27 @@ public class ChangingMaterial : MonoBehaviour
     [HeaderAttribute("[Islands]")]
     GameObject[] islandObjects;
     public Material[] IslandMaterials;
-
-    /*void Start()
+    public string firATag;
+    public string firBTag;
+    public string islandTag; 
+    void Start()
     {
         islandObjects = GameObject.FindGameObjectsWithTag("island");
-        firTreeA = GameObject.FindGameObjectsWithTag("FirTreeA");
+        firTreeA = GameObject.FindGameObjectsWithTag(firATag);
         firTreeB = GameObject.FindGameObjectsWithTag("FirTreeB");
-        meshrenders = new MeshRenderer[firTreeA.Length + firTreeB.Length + islandObjects.Length];
-
-        for (int i = 0; i < firTreeA.Length + firTreeB.Length + islandObjects.Length; i++)
+        meshrenders = new MeshRenderer[firTreeA.Length + islandObjects.Length];
+     
+        int totalLength = firTreeA.Length + islandObjects.Length - 1;
+        for (int i = 0; i < firTreeA.Length + islandObjects.Length; i++)
         {
+            //meshrenders[i].material.color = Color.white;
+
             if (i < firTreeA.Length)
+            {
                 meshrenders[i] = firTreeA[i].GetComponent<MeshRenderer>();
+            }
             else
-                meshrenders[i] = islandObjects[(firTreeA.Length  +firTreeB.Length+ islandObjects.Length) - i - 1].GetComponent<MeshRenderer>();
+                meshrenders[i] = islandObjects[totalLength - i].GetComponent<MeshRenderer>();
         }
     }
 
@@ -49,15 +56,19 @@ public class ChangingMaterial : MonoBehaviour
             {
                 print("ispressed");
 
-                if (meshrenders[i].tag == "FirTreeA")
+                if (meshrenders[i].tag == firATag)
+                {
                     meshrenders[i].materials = materialsFirA;
+                }
 
                 else if (meshrenders[i].tag == "FirTreeB")
                     meshrenders[i].materials = materialsFirB;
 
                 else if (meshrenders[i].tag == "island")
                     meshrenders[i].materials = IslandMaterials;
+
+
             }
         }
-    }*/
+    }
 }
