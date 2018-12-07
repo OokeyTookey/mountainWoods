@@ -28,7 +28,7 @@ public class Flee : MonoBehaviour
         {
         }*/
             desiredDistance = desiredVelo.magnitude;
-            desiredVelo = -(transform.position - targetPosition.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
+            desiredVelo = (transform.position - targetPosition.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
             steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
             RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3); 
             RB.AddForce(steering); //Moves the character based on the set steering behaviour

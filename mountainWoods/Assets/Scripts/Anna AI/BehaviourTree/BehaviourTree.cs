@@ -18,8 +18,7 @@ namespace NSBehaviourTree
 
             set
             {
-                if(value <= parentNode.nodes.Count -1)
-                    index = value;
+                if(value <= parentNode.nodes.Count -1) index = value;
             }
         }
 
