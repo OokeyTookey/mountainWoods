@@ -26,12 +26,12 @@ public class ChangingMaterial : MonoBehaviour
     public Material[] IslandMaterials;
     public string firATag;
     public string firBTag;
-    public string islandTag; 
+    public string islandTagA; 
     void Start()
     {
-        islandObjects = GameObject.FindGameObjectsWithTag("island");
+        islandObjects = GameObject.FindGameObjectsWithTag(islandTagA);
         firTreeA = GameObject.FindGameObjectsWithTag(firATag);
-        firTreeB = GameObject.FindGameObjectsWithTag("FirTreeB");
+        firTreeB = GameObject.FindGameObjectsWithTag(firBTag);
         meshrenders = new MeshRenderer[firTreeA.Length + islandObjects.Length];
      
         int totalLength = firTreeA.Length + islandObjects.Length - 1;
