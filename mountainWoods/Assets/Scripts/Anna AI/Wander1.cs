@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wander : Node
+public class Wander1 : MonoBehaviour
 {
+
     //----------- Wander Vairables
     Rigidbody RB;
     Vector3 displacement;
@@ -28,11 +29,12 @@ public class Wander : Node
         circleCenter = RB.velocity.normalized * offset + transform.position;
         displacement = circleCenter + new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)).normalized * circleRadius;
         Seek(displacement);
+        transform.LookAt(RB.velocity);
     }
 
     void Seek(Vector3 targetPosition)
     {
-        //Debug.DrawLine(transform.position, RB.velocity + transform.position, Color.red);
+       // Debug.DrawLine(transform.position, RB.velocity + transform.position, Color.red);
 
         distanceFrom = (targetPosition - transform.position).magnitude; //Calculates the distance between the sheep and position
         desiredVelo = (targetPosition - transform.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
