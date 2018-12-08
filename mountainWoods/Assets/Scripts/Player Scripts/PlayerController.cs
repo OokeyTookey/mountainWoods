@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
     public float speed;
     public float jumpForce;
     public Rigidbody playerRB;
     public GameObject fenceGate;
     bool fence = false;
 
- 
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
-
   
     void Update()
     {
