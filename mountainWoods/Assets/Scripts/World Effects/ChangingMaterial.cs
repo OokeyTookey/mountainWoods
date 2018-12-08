@@ -66,8 +66,6 @@ public class ChangingMaterial : MonoBehaviour
 
                 else if (meshrenders[i].tag == "island")
                     meshrenders[i].materials = IslandMaterials;
-
-
             }
         }
     }
