@@ -20,6 +20,6 @@ public class MainMenuManager : MonoBehaviour {
     public void StartGame()
     {
         Debug.Log("ispressed");
-        SceneManager.LoadScene("StarterIsland");
+        SceneManager.LoadScene("MainGame");
     }
 }
