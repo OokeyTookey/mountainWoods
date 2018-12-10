@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Patrol : Node
 {
-    public override void Execute(Enemy owner)
+    public override Result Execute(Enemy owner)
     {
         base.Execute(owner);
         owner.gameObject.transform.Translate(Vector3.forward);
+        return Result.success;
     }
 }

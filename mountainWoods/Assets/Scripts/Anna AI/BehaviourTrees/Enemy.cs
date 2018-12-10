@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Transform playerReference;
+    public float range;
+    public Transform playerReference;
     Node parentNode; //Parent node/link
-    
+
     private void Start()
     {
         parentNode = new Selector();
+        parentNode.nodes.Add(new InRange(playerReference, range));
+        parentNode.nodes.Add(new Patrol());
     }
 
     public void Update()

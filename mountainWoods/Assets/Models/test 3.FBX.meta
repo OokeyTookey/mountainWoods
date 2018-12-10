@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: aa8a9f09043cdb04baa552bbfc2aa2eb
-timeCreated: 1544291635
+guid: 35de1fd954d07f646b448de4efb8b291
+timeCreated: 1544432032
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -107,22 +107,22 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    importVisibility: 1
-    importBlendShapes: 1
+    importVisibility: 0
+    importBlendShapes: 0
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    optimizeMeshForGPU: 0
     keepQuads: 0
-    weldVertices: 1
+    weldVertices: 0
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8

@@ -1,18 +1,85 @@
 fileFormatVersion: 2
-guid: 5d4925cc435b3d541b608cbfa01cbfd8
-timeCreated: 1544429936
+guid: 8ed42ac50b1787449bf6c482d509d83a
+timeCreated: 1544430881
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: sheep001
-    100002: //RootNode
-    400000: sheep001
-    400002: //RootNode
-    2100000: sheep001Mat
-    2300000: sheep001
-    3300000: sheep001
-    4300000: sheep001
+    100000: Bone001
+    100002: Bone002
+    100004: Bone003
+    100006: Bone004
+    100008: Bone005
+    100010: Bone006
+    100012: Bone007
+    100014: Bone008
+    100016: Bone009
+    100018: Bone010
+    100020: Bone011
+    100022: Bone012
+    100024: Bone013
+    100026: Bone014
+    100028: Circle001
+    100030: Circle002
+    100032: Circle004
+    100034: Circle006
+    100036: Circle007
+    100038: Egg001
+    100040: IK Chain001
+    100042: IK Chain002
+    100044: IK Chain003
+    100046: IK Chain004
+    100048: Omni001
+    100050: Omni002
+    100052: Omni004
+    100054: Rectangle001
+    100056: Rectangle002
+    100058: Rectangle003
+    100060: Rectangle004
+    100062: sheep
+    100064: //RootNode
+    400000: Bone001
+    400002: Bone002
+    400004: Bone003
+    400006: Bone004
+    400008: Bone005
+    400010: Bone006
+    400012: Bone007
+    400014: Bone008
+    400016: Bone009
+    400018: Bone010
+    400020: Bone011
+    400022: Bone012
+    400024: Bone013
+    400026: Bone014
+    400028: Circle001
+    400030: Circle002
+    400032: Circle004
+    400034: Circle006
+    400036: Circle007
+    400038: Egg001
+    400040: IK Chain001
+    400042: IK Chain002
+    400044: IK Chain003
+    400046: IK Chain004
+    400048: Omni001
+    400050: Omni002
+    400052: Omni004
+    400054: Rectangle001
+    400056: Rectangle002
+    400058: Rectangle003
+    400060: Rectangle004
+    400062: sheep
+    400064: //RootNode
+    2100000: 01 - Default1
+    2100002: 01 - Default
+    4300000: sheep
+    7400000: Take 001
+    9500000: //RootNode
+    10800000: Omni001
+    10800002: Omni002
+    10800004: Omni004
+    13700000: sheep
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -51,7 +118,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -65,7 +132,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
@@ -87,7 +154,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

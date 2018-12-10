@@ -4,17 +4,25 @@ using UnityEngine;
 
 public class InRange : Node
 {
-    public Transform otherPosition;
-    public float range;
+    float range;
+    Transform otherTransform;
 
-    public override void Execute(Enemy owner)
+     public InRange(Transform otherTranformPosition, float range)
+     {
+        otherTransform = otherTranformPosition;
+        this.range = range;
+     }
+
+
+    public override Result Execute(Enemy owner)
     {
-        if (Vector3.Distance(otherPosition.position, owner.transform.position) < range)
+        if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) //Checks distance
         {
-            result = Result.success;
+            return Result.success; 
         }
 
-        else result = Result.failure;
-        base.Execute(owner);
+        else return Result.failure; 
     }
+
+    
 }
