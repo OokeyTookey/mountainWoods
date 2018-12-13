@@ -13,7 +13,6 @@ public class InRange : Node
         this.range = range;
      }
 
-
     public override Result Execute(Enemy owner)
     {
         if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) //Checks distance
@@ -23,6 +22,4 @@ public class InRange : Node
 
         else return Result.failure; 
     }
-
-    
 }
