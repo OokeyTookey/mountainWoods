@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flee : MonoBehaviour
+public class Flee : Node
 {
     Rigidbody RB;
     Vector3 steering;
@@ -33,5 +33,7 @@ public class Flee : MonoBehaviour
         steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
         RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3);
         RB.AddForce(steering); //Moves the character based on the set steering behaviour
+
+       // transform.LookAt((transform.position - targetPosition.position) * 100);
     }
 }
