@@ -5,7 +5,7 @@ using UnityEngine;
 public class SheepAIDemoPurpose : MonoBehaviour {
 
 
-    public Transform playerReference;
+   /* public Transform playerReference;
 
     //----------- Wander Vairables
     Rigidbody RB;
@@ -45,7 +45,7 @@ public class SheepAIDemoPurpose : MonoBehaviour {
             steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
             RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3);
             RB.AddForce(steering); //Moves the character based on the set steering behaviour
-        }*/
+        }
 
        
             circleCenter = RB.velocity.normalized * offset + transform.position;
@@ -61,5 +61,5 @@ public class SheepAIDemoPurpose : MonoBehaviour {
         steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
         RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3);
         RB.AddForce(steering); //Moves the character based on the set steering behaviour
-    }
+    }*/
 }

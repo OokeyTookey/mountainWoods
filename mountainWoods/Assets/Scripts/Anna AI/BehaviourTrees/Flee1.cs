@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flee : Node
+public class Flee1 : Node
 {
     Rigidbody RB;
     Vector3 steering;
@@ -13,13 +13,14 @@ public class Flee : Node
     public float maxVelo;
     public Transform targetPosition;
 
-    void Start()
+  /*  void Start()
     {
         RB = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+        print("Flee");
         Debug.DrawLine(transform.position, RB.velocity + transform.position, Color.yellow);
 
         distanceFrom = (transform.position - targetPosition.position).magnitude; //Calculates the distance between the sheep and position
@@ -33,7 +34,5 @@ public class Flee : Node
         steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
         RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3);
         RB.AddForce(steering); //Moves the character based on the set steering behaviour
-
-       // transform.LookAt((transform.position - targetPosition.position) * 100);
-    }
+    }*/
 }

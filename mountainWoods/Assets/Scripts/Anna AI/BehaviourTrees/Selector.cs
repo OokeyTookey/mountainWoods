@@ -3,13 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Selector : Node {
-    /***
-     * 
-     * FFS ...... S
-     * FRS ...... R
-     * SRS > S
-     * FFF > F
-     ***/
+
     public override Result Execute(Enemy owner)
     {
         for (int i = 0; i < nodes.Count; i++)

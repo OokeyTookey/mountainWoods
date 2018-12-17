@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Class Settings")]
     public float range;
     public Transform playerReference;
     public Rigidbody enemyRB;
     public float offset;
-
     Node parentNode; //Parent node/link
 
-    //----------- Seek Variables
-    Vector3 steering;
-    Vector3 desiredVelo;
-    float distanceFrom;
-    float desiredDistance;
+
+    [Header("Seek Variables")]
+    public float distanceFrom;
+    public float desiredDistance;
     public float maxVelo;
     public float circleRadius;
+    Vector3 steering;
+    Vector3 desiredVelo;
 
+    public float slowingRadius;
 
     private void Start()
     {
         enemyRB = GetComponent<Rigidbody>();
 
         parentNode = new Selector();
-        parentNode.nodes.Add(new InRange(playerReference, range));
+        parentNode.nodes.Add(new Sequencer());
+        parentNode.nodes[0].nodes.Add(new InRange(playerReference, range)); //accesssing the first sequence by checking the 1st element
+        parentNode.nodes[0].nodes.Add(new Flee());
+
         parentNode.nodes.Add(new Wander());
     }
 
@@ -42,7 +47,6 @@ public class Enemy : MonoBehaviour
         desiredVelo = (targetPosition - transform.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
 
         steering = desiredVelo - enemyRB.velocity; //Sets the steering behaviour by minusing
-        //enemyRB.velocity = Vector3.ClampMagnitude(enemyRB.velocity, maxVelo);
         enemyRB.AddForce(steering); //Moves the character based on the set steering behaviour
     }
 }

@@ -14,7 +14,8 @@ public class Wander : Node
         circleCenter = owner.enemyRB.velocity.normalized * owner.offset + owner.transform.position;
         displacement = circleCenter + new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)).normalized * owner.circleRadius;
         owner.Seek(displacement);
-        print(owner.enemyRB.velocity);
+        Debug.Log("wander");
+       // print(owner.enemyRB.velocity);
         return Result.success;
     }
 }

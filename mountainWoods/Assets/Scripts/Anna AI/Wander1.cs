@@ -19,7 +19,7 @@ public class Wander1 : Node
     public float maxVelo;
 
 
-    void Start()
+    /*void Start()
     {
         RB = GetComponent<Rigidbody>(); //Angle shift (limit the angle) RAYCAST a random direction (either side)to aviod the 
     }
@@ -40,5 +40,5 @@ public class Wander1 : Node
         steering = desiredVelo - RB.velocity; //Sets the steering behaviour by minusing
         RB.velocity = Vector3.ClampMagnitude(RB.velocity, 3);
         RB.AddForce(steering); //Moves the character based on the set steering behaviour
-    }
+    }*/
 }

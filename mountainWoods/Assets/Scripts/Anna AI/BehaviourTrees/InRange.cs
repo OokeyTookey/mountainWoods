@@ -17,6 +17,7 @@ public class InRange : Node
     {
         if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) //Checks distance
         {
+        Debug.Log("inRange");
             return Result.success; 
         }
 
