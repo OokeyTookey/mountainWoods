@@ -24,8 +24,6 @@ public class Selector : Node {
                 return Result.running;
             }
         }
-
-
         return Result.failure;
     }
 }

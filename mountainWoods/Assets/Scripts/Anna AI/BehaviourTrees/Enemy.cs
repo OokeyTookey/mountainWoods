@@ -23,9 +23,6 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         enemyRB = GetComponent<Rigidbody>();
-        /*parentNode = new Selector();
-        parentNode.nodes.Add(new InRange(playerReference, range));
-        parentNode.nodes.Add(new Patrol());*/
 
         parentNode = new Selector();
         parentNode.nodes.Add(new InRange(playerReference, range));
