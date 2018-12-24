@@ -11,7 +11,6 @@ public class Enemy : MonoBehaviour
     public float offset;
     Node parentNode; //Parent node/link
 
-
     [Header("Seek Variables")]
     public float distanceFrom;
     public float desiredDistance;

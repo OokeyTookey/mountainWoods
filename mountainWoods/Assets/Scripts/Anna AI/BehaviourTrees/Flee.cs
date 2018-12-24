@@ -7,7 +7,6 @@ public class Flee : Node
     Vector3 steering;
     Vector3 desiredVelo;
     float distanceFromFlee;
-    
 
     public override Result Execute(Enemy owner)
     {
@@ -17,7 +16,7 @@ public class Flee : Node
         distanceFromFlee = (owner.transform.position - owner.playerReference.position).magnitude; //Calculates the distance between the sheep and position
         desiredVelo = (owner.transform.position - owner.playerReference.position).normalized * owner.maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
 
-        if (distanceFromFlee > owner.slowingRadius)
+        if (distanceFromFlee > owner.slowingRadius) 
         {
             desiredVelo = Vector3.zero; //Slows down the enemy aka arrival
         }
