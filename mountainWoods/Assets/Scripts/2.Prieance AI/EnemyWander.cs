@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWander : MonoBehaviour {
-    public float maxSpeed;
+   /* public float maxSpeed;
     public float circleRadius;
     public float circleDistance;
     float wanderAngle;
@@ -46,5 +46,5 @@ public class EnemyWander : MonoBehaviour {
         float length = vector.magnitude;
         vector.x = Mathf.Cos(value) * length;
         vector.z = Mathf.Sin(value) * length;
-    }
+    }*/
 }

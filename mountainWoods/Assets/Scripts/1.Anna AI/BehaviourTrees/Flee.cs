@@ -11,12 +11,12 @@ public class Flee : Node
     public override Result Execute(Enemy owner)
     {
         Debug.Log("Flee");
-        Debug.DrawLine(owner.transform.position, owner.enemyRB.velocity + owner.transform.position, Color.yellow);
+        Debug.DrawLine(owner.transform.position, owner.enemyRB.velocity + owner.transform.position, Color.yellow); //Debug purposes
 
         distanceFromFlee = (owner.transform.position - owner.playerReference.position).magnitude; //Calculates the distance between the sheep and position
         desiredVelo = (owner.transform.position - owner.playerReference.position).normalized * owner.maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
 
-        if (distanceFromFlee > owner.slowingRadius) 
+        if (distanceFromFlee > owner.slowingRadius)  
         {
             desiredVelo = Vector3.zero; //Slows down the enemy aka arrival
         }
