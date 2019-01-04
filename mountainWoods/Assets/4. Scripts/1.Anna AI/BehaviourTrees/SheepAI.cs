@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SheepAI : Enemy {
-
+public class SheepAI : Enemy
+{
     Node parentNode; //Parent node/link
 
-
-    void Start ()
+    void Start()
     {
-        enemyRB = GetComponent<Rigidbody>(); //Accesses the enemies rigid body.
 
         parentNode = new Selector(); //Creates the new parent node 
         parentNode.nodes.Add(new Sequencer()); //Addes a new node to the parent which is the sequencer
@@ -18,9 +16,9 @@ public class SheepAI : Enemy {
 
         parentNode.nodes.Add(new Wander()); //Fallback behaviour is set to wander (if everything fails this will return true)
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public void Update()
+    {
+        parentNode.Execute(this); 
+    }
 }
