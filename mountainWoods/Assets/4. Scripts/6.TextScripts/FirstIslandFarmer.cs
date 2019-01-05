@@ -3,27 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
 
-public class NPCFirstIsland : MonoBehaviour
+public class FirstIslandFamer : MonoBehaviour
 {
-
     public GameObject TextPanel1;
     public GameObject TextWelcome;
     public GameObject TextControls;
-    public GameObject TextSheep;
     bool nextFrame;
-    float textCounter;
-
-    void Start()
-    {
-
-    }
 
     private void Update()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             nextFrame = true;
-            textCounter++;
         }
     }
 
@@ -34,16 +25,10 @@ public class NPCFirstIsland : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (nextFrame & TextPanel1 & other.gameObject.tag == "Farmer")
+        if (nextFrame & TextPanel1)
         {
             TextWelcome.SetActive(false);
             TextControls.SetActive(true);
-        }
-
-        if (nextFrame & TextPanel1 & textCounter == 2)
-        {
-            TextControls.SetActive(false);
-            TextSheep.SetActive(true);
         }
     }
 

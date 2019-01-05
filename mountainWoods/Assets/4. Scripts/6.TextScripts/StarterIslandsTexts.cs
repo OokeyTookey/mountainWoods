@@ -5,16 +5,10 @@ using UnityEditor.UI;
 
 public class StarterIslandsTexts : MonoBehaviour
 {
-
     public GameObject TextPanel1;
     public GameObject TextWelcome;
     public GameObject TextControls;
     bool nextFrame;
-
-    void Start()
-    {
-
-    }
 
     private void Update()
     {

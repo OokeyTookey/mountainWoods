@@ -2,18 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour {
+public class Dialogue : MonoBehaviour
+{
     public GameObject Dbox1;
     public GameObject Dbox2;
-    // Use this for initialization
-    void Start() {
-
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,14 +18,12 @@ public class Dialogue : MonoBehaviour {
         {
             Dbox2.SetActive(false);
         }
-      else  if (Input.GetKey(KeyCode.Space))
+        else if (Input.GetKey(KeyCode.Space))
         {
             print("test");
             Dbox1.SetActive(false);
             Dbox2.SetActive(true);
         }
-
-       
     }
 
     private void OnTriggerExit(Collider other)
