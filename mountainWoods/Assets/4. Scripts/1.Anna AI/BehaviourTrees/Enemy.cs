@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float lineOfSight;
     public Transform playerReference;
     public Rigidbody enemyRB;
+    public float force;
     Node parentNode; //Parent node/link
 
     [Header("Seek Variables")]
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        enemyRB = GetComponent<Rigidbody>(); //Accesses the enemies rigid body.
+        //enemyRB = GetComponent<Rigidbody>(); //Accesses the enemies rigid body.
     }
 
     public void Seek(Vector3 targetPosition) //Generic seek code between this object and another position (usually the player)
@@ -34,6 +35,6 @@ public class Enemy : MonoBehaviour
         desiredVelo = (targetPosition - transform.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
 
         steering = desiredVelo - enemyRB.velocity; //Sets the steering behaviour by minusing
-        enemyRB.AddForce(steering); //Moves the character based on the set steering behaviour
+        enemyRB.AddForce(steering * force); //Moves the character based on the set steering behaviour
     }
 }

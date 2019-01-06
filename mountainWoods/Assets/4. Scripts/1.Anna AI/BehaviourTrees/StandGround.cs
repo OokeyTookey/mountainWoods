@@ -14,6 +14,7 @@ public class StandGround : Node {
         if (distanceFromPlayer <= owner.lineOfSight)
         {
             counter++;
+            owner.enemyRB.velocity = Vector3.zero; //makes the wolf stand still :)
         }
 
         if (counter == 3)

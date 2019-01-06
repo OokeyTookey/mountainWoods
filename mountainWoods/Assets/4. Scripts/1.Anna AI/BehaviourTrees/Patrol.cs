@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Patrol : Node
 {
+    bool chooseRandomPosition;
+    float randomPositionX;
+    float randomPositionZ;
+
     public override Result Execute(Enemy owner)
     {
-        //choose random position
-        //seek to that position
-
-        /*float randomPositionX = Random.Range(0, 100);
-        float randomPositionZ = Random.Range(0, 100);
+        if (!chooseRandomPosition)
+        {
+            randomPositionX = Random.Range(0, 100);
+            randomPositionZ = Random.Range(0, 100);
+            chooseRandomPosition = true;
+        }
 
         Vector3 randomLocation = new Vector3(randomPositionX, 0, randomPositionZ);
 
-        owner.Seek(owner.playerReference.position);
+        owner.Seek(randomLocation * owner.force);
 
-        Debug.DrawLine(owner.transform.position, randomLocation + owner.transform.position, Color.yellow);*/
+        Debug.DrawLine(owner.transform.position, randomLocation + owner.transform.position, Color.yellow);
 
-        owner.enemyRB.AddForce(Vector3.forward);
-        Debug.Log("Patrol");
+        //owner.enemyRB.AddForce((Vector3.forward) * owner.force);
+        Debug.Log("Patrol" + owner.enemyRB.velocity);
         return Result.success;
     }
 }

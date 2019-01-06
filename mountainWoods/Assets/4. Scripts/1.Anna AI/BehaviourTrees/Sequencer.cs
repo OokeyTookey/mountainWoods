@@ -9,14 +9,17 @@ public class Sequencer : Node {
         {
             if (nodes[i].Execute(owner) == Result.failure)
             {
+                Debug.Log("Sequence failure");
                 return Result.failure;
             }
 
             if (nodes[i].Execute(owner) == Result.running)
             {
+                Debug.Log("Sequence running");
                 return Result.running;
             }
         }
+        Debug.Log("Sequence succsufyl");
         return Result.success;
     }
 }
