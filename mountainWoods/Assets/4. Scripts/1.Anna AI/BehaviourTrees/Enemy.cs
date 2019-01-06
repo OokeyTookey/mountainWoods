@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Class Settings")]
     public float range;
     public float offset;
+    public float lineOfSight;
     public Transform playerReference;
     public Rigidbody enemyRB;
     Node parentNode; //Parent node/link
@@ -26,15 +27,9 @@ public class Enemy : MonoBehaviour
         enemyRB = GetComponent<Rigidbody>(); //Accesses the enemies rigid body.
     }
 
-    public void Update()
-    {
-         
-    }
-
     public void Seek(Vector3 targetPosition) //Generic seek code between this object and another position (usually the player)
     {
         Debug.DrawLine(transform.position, enemyRB.velocity + transform.position, Color.red); //Debugging purposes.
-
         distanceFrom = (targetPosition - transform.position).magnitude; //Calculates the distance between the sheep and position
         desiredVelo = (targetPosition - transform.position).normalized * maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
 

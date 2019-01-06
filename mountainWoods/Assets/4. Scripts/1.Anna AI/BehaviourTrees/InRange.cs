@@ -7,20 +7,21 @@ public class InRange : Node
     float range;
     Transform otherTransform;
 
-     public InRange(Transform otherTranformPosition, float range)
-     {
+    public InRange(Transform otherTranformPosition, float range)
+    {
         otherTransform = otherTranformPosition;
         this.range = range;
-     }
+    }
 
     public override Result Execute(Enemy owner)
     {
         if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) //Checks distance
         {
-        Debug.Log("inRange");
-            return Result.success; 
+            Debug.Log("inRange");
+            //return Result.running; or success?
+            return Result.running;
         }
 
-        else return Result.failure; 
+        else return Result.failure;
     }
 }
