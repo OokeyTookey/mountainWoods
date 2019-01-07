@@ -7,17 +7,24 @@ public class Sequencer : Node {
     {
         for (int i = 0; i < nodes.Count; i++)
         {
+            if (previousResult == Result.running && nodes[i].previousResult!=Result.running)
+            {
+                continue; //Skips an itteration in the for loops
+            }
+
+            nodes[i].Execute(owner);
+
             if (nodes[i].Execute(owner) == Result.failure)
             {
-                return Result.failure;
+                return previousResult = Result.failure;
             }
 
             if (nodes[i].Execute(owner) == Result.running)
             {
-                nodes[i].Execute(owner);
-                return Result.running;
+                return previousResult = Result.running;
             }
+            
         }
-        return Result.success;
+        return previousResult = Result.success;
     }
 }

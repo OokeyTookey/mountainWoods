@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Howl : Node
 {
+    bool hasWolfHowled;
+
     public override Result Execute(Enemy owner)
     {
-        float randomSpawn = Random.Range(0, 100);
-
-        if (randomSpawn <= 10)
+        if (!hasWolfHowled)
         {
-            //Spawn another wolf
-            //Play sound effect
-            Debug.Log("Wolf spawns due to howl");
-            return Result.success;
-        }
+            float randomSpawn = Random.Range(0, 100);
 
-        return Result.success;
+            if (randomSpawn <= 1)
+            {
+                //Spawn another wolf
+                //Play sound effect
+                Debug.Log("Wolf Spawns: Howl");
+                return previousResult = Result.success;
+            }
+            hasWolfHowled = true;
+        }
+        return previousResult = Result.success;
     }
 }

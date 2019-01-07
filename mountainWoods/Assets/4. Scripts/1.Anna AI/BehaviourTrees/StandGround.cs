@@ -6,23 +6,21 @@ public class StandGround : Node {
 
     int counter;
     float distanceFromPlayer;
+    float waitTimer;
 
     public override Result Execute(Enemy owner)
     {
-        distanceFromPlayer = (owner.playerReference.position - owner.transform.position).magnitude; //Calculates the distance between the sheep and position
+        owner.enemyRB.velocity = Vector3.zero; //makes the wolf stand still :)
 
-        if (distanceFromPlayer <= owner.lineOfSight)
-        {
-            counter++;
-            owner.enemyRB.velocity = Vector3.zero; //makes the wolf stand still :)
-        }
+        waitTimer += Time.deltaTime;
 
-        if (counter == 3)
+        if (waitTimer >= 10)
         {
             counter = 0;
-            return Result.success;
+            Debug.Log("<color=red> Stand ground </color>");
+            return previousResult = Result.success;
+        
         }
-
-        return Result.failure;
+        return previousResult = Result.failure;
     }
 }

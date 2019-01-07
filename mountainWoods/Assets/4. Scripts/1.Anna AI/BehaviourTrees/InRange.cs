@@ -13,21 +13,14 @@ public class InRange : Node
         this.range = range;
     }
 
-    public override Result Execute(Enemy owner)
-    {  
-        if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) 
+    public override Result Execute(Enemy owner) //Conditional node, becomes invisible when sucessful.
+    {
+        if (Vector3.Distance(otherTransform.position, owner.transform.position) < range)
         {
-           //owner.enemyRB.velocity = Vector3.zero;
             Debug.Log("inRange");
-
-            if (nodes.Count > 0)
-            {
-            nodes[nodes.Count-1].Execute(owner);
-
-            }
-            return Result.running;
+            return nodes[nodes.Count - 1].Execute(owner);
         }
 
-        else return Result.failure;
+        else return previousResult = Result.failure;
     }
 }

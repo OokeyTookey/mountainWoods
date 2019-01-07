@@ -8,16 +8,21 @@ public class Selector : Node {
     {
         for (int i = 0; i < nodes.Count; i++)
         {
+            if (previousResult == Result.running && nodes[i].previousResult != Result.running)
+            {
+                continue; //Skips an itteration in the for loops
+            }
+
             if (nodes[i].Execute(owner) == Result.success)
             {
-                return Result.success;
+                return previousResult = Result.success;
             }
 
             if (nodes[i].Execute(owner) == Result.running)
             {
-                return Result.running;
+                return previousResult = Result.running;
             }
         }
-        return Result.failure;
+        return previousResult = Result.failure;
     }
 }

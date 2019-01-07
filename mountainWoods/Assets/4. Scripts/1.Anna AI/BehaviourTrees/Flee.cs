@@ -25,6 +25,6 @@ public class Flee : Node
         owner.enemyRB.velocity = Vector3.ClampMagnitude(owner.enemyRB.velocity, 3); //Clamps the magnitude of the enemy
         owner.enemyRB.AddForce(steering); //Moves the character based on the set steering behaviour
 
-        return Result.success;
+        return previousResult = Result.running;
     }
 }

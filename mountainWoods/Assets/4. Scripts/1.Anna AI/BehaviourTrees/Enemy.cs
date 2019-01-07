@@ -7,10 +7,11 @@ public class Enemy : MonoBehaviour
     [Header("Enemy Class Settings")]
     public float range;
     public float offset;
-    public float lineOfSight;
+    public float FOV;
     public Transform playerReference;
     public Rigidbody enemyRB;
     public float force;
+    float distanceFromPlayer;
     Node parentNode; //Parent node/link
 
     [Header("Seek Variables")]
