@@ -21,10 +21,10 @@ public class Patrol : Node
 
         owner.Seek(randomLocation * owner.force);
 
-        Debug.DrawLine(owner.transform.position, randomLocation + owner.transform.position, Color.yellow);
+        //Debug.DrawLine(owner.transform.position, randomLocation + owner.transform.position, Color.yellow);
 
         //owner.enemyRB.AddForce((Vector3.forward) * owner.force);
-        Debug.Log("Patrol" + owner.enemyRB.velocity);
+        //Debug.Log("Patrol" + owner.enemyRB.velocity);
         return Result.success;
     }
 }

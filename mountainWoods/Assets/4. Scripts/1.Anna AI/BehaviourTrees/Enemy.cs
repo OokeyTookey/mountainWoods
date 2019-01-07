@@ -23,11 +23,6 @@ public class Enemy : MonoBehaviour
 
     public float slowingRadius;
 
-    private void Start()
-    {
-        //enemyRB = GetComponent<Rigidbody>(); //Accesses the enemies rigid body.
-    }
-
     public void Seek(Vector3 targetPosition) //Generic seek code between this object and another position (usually the player)
     {
         Debug.DrawLine(transform.position, enemyRB.velocity + transform.position, Color.red); //Debugging purposes.

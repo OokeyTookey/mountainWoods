@@ -14,8 +14,7 @@ public class InRange : Node
     }
 
     public override Result Execute(Enemy owner)
-    {
-        
+    {  
         if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) 
         {
            //owner.enemyRB.velocity = Vector3.zero;

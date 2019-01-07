@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: ebb49a5c28ec5cf4db9abf138f356811
+timeCreated: 1546853252
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box002
+    100002: IKTarget001
+    100004: IKTarget002
+    100006: IKTarget003
+    100008: IKTarget004
+    100010: Object001
+    100012: Object004
+    100014: Object011
+    100016: Object014
+    100018: Panther
+    100020: PantherLLeg1
+    100022: PantherLLeg1 1
+    100024: PantherLLeg2
+    100026: PantherLLeg2 1
+    100028: PantherLLegDigit01
+    100030: PantherLLegDigit01 1
+    100032: PantherLLegPalm
+    100034: PantherLLegPalm 1
+    100036: PantherNeck1
+    100038: PantherNeck2
+    100040: PantherNeck3
+    100042: PantherRLeg1
+    100044: PantherRLeg1 1
+    100046: PantherRLeg2
+    100048: PantherRLeg2 1
+    100050: PantherRLegCollarbone
+    100052: PantherRLegDigit01
+    100054: PantherRLegDigit01 1
+    100056: PantherRLegPalm
+    100058: PantherRLegPalm 1
+    100060: PantherSpine1
+    100062: PantherSpine2
+    100064: PantherSpine3
+    100066: PantherTail1
+    100068: PantherTail2
+    100070: PantherTail3
+    100072: PantherTail4
+    100074: PantherTail5
+    100076: PantherTail6
+    100078: PantherTail7
+    100080: //RootNode
+    400000: Box002
+    400002: IKTarget001
+    400004: IKTarget002
+    400006: IKTarget003
+    400008: IKTarget004
+    400010: Object001
+    400012: Object004
+    400014: Object011
+    400016: Object014
+    400018: Panther
+    400020: PantherLLeg1
+    400022: PantherLLeg1 1
+    400024: PantherLLeg2
+    400026: PantherLLeg2 1
+    400028: PantherLLegDigit01
+    400030: PantherLLegDigit01 1
+    400032: PantherLLegPalm
+    400034: PantherLLegPalm 1
+    400036: PantherNeck1
+    400038: PantherNeck2
+    400040: PantherNeck3
+    400042: PantherRLeg1
+    400044: PantherRLeg1 1
+    400046: PantherRLeg2
+    400048: PantherRLeg2 1
+    400050: PantherRLegCollarbone
+    400052: PantherRLegDigit01
+    400054: PantherRLegDigit01 1
+    400056: PantherRLegPalm
+    400058: PantherRLegPalm 1
+    400060: PantherSpine1
+    400062: PantherSpine2
+    400064: PantherSpine3
+    400066: PantherTail1
+    400068: PantherTail2
+    400070: PantherTail3
+    400072: PantherTail4
+    400074: PantherTail5
+    400076: PantherTail6
+    400078: PantherTail7
+    400080: //RootNode
+    2100000: No Name
+    4300000: Box002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Box002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
