@@ -15,16 +15,20 @@ public class InRange : Node
 
     public override Result Execute(Enemy owner)
     {
+        
         if (Vector3.Distance(otherTransform.position, owner.transform.position) < range) 
         {
-           // owner.enemyRB.velocity = Vector3.zero;
+           //owner.enemyRB.velocity = Vector3.zero;
             Debug.Log("inRange");
+
+            if (nodes.Count > 0)
+            {
+            nodes[nodes.Count-1].Execute(owner);
+
+            }
             return Result.running;
         }
 
-        else
-            Debug.Log("FAILED inRange");
-
-        return Result.failure;
+        else return Result.failure;
     }
 }

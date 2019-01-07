@@ -5,11 +5,13 @@ using UnityEngine;
 public class WolfAI : Enemy
 {
     Node parentNode; //Parent node/link
+    Node stalkSequencer;
+    Node howlSequence;
 
     void Start()
     {
-        Node stalkSequencer = new Sequencer();
-        Node howlSequence = new Sequencer();
+        stalkSequencer = new Sequencer();
+        howlSequence = new Sequencer();
 
         parentNode = new Selector(); //Creates the new parent node 
         parentNode.nodes.Add(new InRange(playerReference, range));
