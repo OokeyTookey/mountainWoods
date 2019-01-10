@@ -27,11 +27,16 @@ public class EnemyWander : MonoBehaviour {
         steering = Wander();
         steering = Vector3.ClampMagnitude(steering, maxForce);
         rb.velocity = Vector3.ClampMagnitude(rb.velocity + steering, maxSpeed);
+        rb.AddForce(steering);
         print(wanderAngle);
 	}
 
     Vector3 Wander()
     {
+        Vector3 circleCenter;
+        circleCenter = rb.velocity;
+        circleCenter = Vector3.Normalize(circleCenter);
+        circleCenter *= (circleDistance);
         circleCenter = velocity.normalized * circleDistance;//clone of velocity vector which is normalized and then multiplied by circleDistance
         displacement = new Vector3(0, 0, -1);
         displacement *= circleRadius;//circleCenter multiplied with circleRadius
