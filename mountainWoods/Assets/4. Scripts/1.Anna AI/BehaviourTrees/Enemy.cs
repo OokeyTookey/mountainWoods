@@ -11,8 +11,6 @@ public class Enemy : MonoBehaviour
     public Transform playerReference;
     public Rigidbody enemyRB;
     public float force;
-    float distanceFromPlayer;
-    Node parentNode; //Parent node/link
 
     [Header("Seek Variables")]
     public float distanceFrom;

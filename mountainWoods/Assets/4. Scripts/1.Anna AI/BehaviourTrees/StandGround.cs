@@ -14,12 +14,11 @@ public class StandGround : Node {
 
         waitTimer += Time.deltaTime;
 
-        if (waitTimer >= 10)
+        if (waitTimer >= 30)
         {
             counter = 0;
             Debug.Log("<color=red> Stand ground </color>");
             return previousResult = Result.success;
-        
         }
         return previousResult = Result.failure;
     }
