@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
 
-public class FirstIslandFamer : MonoBehaviour
+public class FirstIslandFarmer : MonoBehaviour
 {
     public GameObject TextPanel1;
     public GameObject TextWelcome;

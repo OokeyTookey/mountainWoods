@@ -22,8 +22,7 @@ public class Sequencer : Node {
             if (nodes[i].Execute(owner) == Result.running)
             {
                 return previousResult = Result.running;
-            }
-            
+            } 
         }
         return previousResult = Result.success;
     }
