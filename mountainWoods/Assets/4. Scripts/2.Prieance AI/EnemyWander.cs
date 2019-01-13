@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWander : MonoBehaviour {
-   /* public float maxSpeed;
+   public float maxSpeed;
     public float circleRadius;
     public float circleDistance;
     float wanderAngle;
@@ -18,6 +18,7 @@ public class EnemyWander : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        wanderAngle = 30;
         rb = GetComponent<Rigidbody>();
 	}
 	
@@ -38,10 +39,13 @@ public class EnemyWander : MonoBehaviour {
         circleCenter = Vector3.Normalize(circleCenter);
         circleCenter *= (circleDistance);
         circleCenter = velocity.normalized * circleDistance;//clone of velocity vector which is normalized and then multiplied by circleDistance
-        displacement = new Vector3(0, 0, -1);
+
+        Vector3 displacement;
+        displacement = new Vector3(0, 0, 1f);
         displacement *= circleRadius;//circleCenter multiplied with circleRadius
         SetAngle(displacement, wanderAngle);
-        wanderAngle += Random.Range(0, 1f) * angleChange - angleChange * 0.5f;
+        wanderAngle += (Random.Range(0, 1f) * angleChange) - (angleChange * 0.5f);
+        Vector3 wanderForce;
         wanderForce = circleCenter + displacement;
         return wanderForce;//the center of the circle + the displacemment
     }
@@ -51,5 +55,5 @@ public class EnemyWander : MonoBehaviour {
         float length = vector.magnitude;
         vector.x = Mathf.Cos(value) * length;
         vector.z = Mathf.Sin(value) * length;
-    }*/
+    }
 }
