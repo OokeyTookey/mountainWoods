@@ -32,6 +32,13 @@ public class ColourLerp : MonoBehaviour
                 Renderer renderer = child.GetComponent<Renderer>();
                 renderer.material.Lerp(newMaterials[0], newMaterials[1], lerp);
 
+
+
+
+
+
+
+
                 //child.GetComponent<Renderer>().materials = newMaterials.;
 
                 // render.material.Lerp(newMaterials[0], newMaterials[1], lerp);

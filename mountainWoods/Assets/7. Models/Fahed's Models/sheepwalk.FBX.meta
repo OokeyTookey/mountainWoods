@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: fe60594b65da57a448eb58782c7986e6
+timeCreated: 1547638859
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Horse
+    100002: HorseFrontRLegFrontHoof
+    100004: HorseFrontRLegHumerus
+    100006: HorseFrontRLegPhalangesManus
+    100008: HorseFrontRLegRadius
+    100010: HorseFrontRLegScapula
+    100012: HorseLFemur
+    100014: HorseLFrontHoof
+    100016: HorseLHumerus
+    100018: HorseLLargeCannon
+    100020: HorseLPhalangesManus
+    100022: HorseLPhalanxPrima
+    100024: HorseLRadius
+    100026: HorseLRearHoof
+    100028: HorseLScapula
+    100030: HorseLTibia
+    100032: HorseNeck1
+    100034: HorseNeck2
+    100036: HorseRFemur
+    100038: HorseRLargeCannon
+    100040: HorseRPhalanxPrima
+    100042: HorseRRearHoof1
+    100044: HorseRTibia
+    100046: IKTarget001
+    100048: IKTarget002
+    100050: IKTarget003
+    100052: IKTarget004
+    100054: Object001
+    100056: Object002
+    100058: Object003
+    100060: Object004
+    100062: Object005
+    100064: Object006
+    100066: Object007
+    100068: Object008
+    100070: Object009
+    100072: Object016
+    100074: sheep002
+    100076: //RootNode
+    400000: Horse
+    400002: HorseFrontRLegFrontHoof
+    400004: HorseFrontRLegHumerus
+    400006: HorseFrontRLegPhalangesManus
+    400008: HorseFrontRLegRadius
+    400010: HorseFrontRLegScapula
+    400012: HorseLFemur
+    400014: HorseLFrontHoof
+    400016: HorseLHumerus
+    400018: HorseLLargeCannon
+    400020: HorseLPhalangesManus
+    400022: HorseLPhalanxPrima
+    400024: HorseLRadius
+    400026: HorseLRearHoof
+    400028: HorseLScapula
+    400030: HorseLTibia
+    400032: HorseNeck1
+    400034: HorseNeck2
+    400036: HorseRFemur
+    400038: HorseRLargeCannon
+    400040: HorseRPhalanxPrima
+    400042: HorseRRearHoof1
+    400044: HorseRTibia
+    400046: IKTarget001
+    400048: IKTarget002
+    400050: IKTarget003
+    400052: IKTarget004
+    400054: Object001
+    400056: Object002
+    400058: Object003
+    400060: Object004
+    400062: Object005
+    400064: Object006
+    400066: Object007
+    400068: Object008
+    400070: Object009
+    400072: Object016
+    400074: sheep002
+    400076: //RootNode
+    2100000: 'Material #0'
+    4300000: sheep002
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: sheep002
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
