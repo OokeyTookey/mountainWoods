@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangingMaterial : MonoBehaviour
 {
-/*
+
     [HeaderAttribute("[Fir Tree A]")]
 
     public Material[] materialsFirA;
@@ -68,5 +68,5 @@ public class ChangingMaterial : MonoBehaviour
                     meshrenders[i].materials = IslandMaterials;
             }
         }
-    }*/
+    }
 }
