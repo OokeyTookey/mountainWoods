@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangingMaterial : MonoBehaviour
 {
-/*
+
     [HeaderAttribute("[Fir Tree A]")]
 
     public Material[] materialsFirA;
@@ -29,13 +29,12 @@ public class ChangingMaterial : MonoBehaviour
     public string islandTagA; 
     void Start()
     {
-        islandObjects = GameObject.FindGameObjectsWithTag(islandTagA);
         firTreeA = GameObject.FindGameObjectsWithTag(firATag);
         firTreeB = GameObject.FindGameObjectsWithTag(firBTag);
-        meshrenders = new MeshRenderer[firTreeA.Length + islandObjects.Length];
+        meshrenders = new MeshRenderer[firTreeA.Length];
      
-        int totalLength = firTreeA.Length + islandObjects.Length - 1;
-        for (int i = 0; i < firTreeA.Length + islandObjects.Length; i++)
+        int totalLength = firTreeA.Length - 1;
+        for (int i = 0; i < firTreeA.Length; i++)
         {
             //meshrenders[i].material.color = Color.white;
 
@@ -43,8 +42,7 @@ public class ChangingMaterial : MonoBehaviour
             {
                 meshrenders[i] = firTreeA[i].GetComponent<MeshRenderer>();
             }
-            else
-                meshrenders[i] = islandObjects[totalLength - i].GetComponent<MeshRenderer>();
+            
         }
     }
 
@@ -68,5 +66,5 @@ public class ChangingMaterial : MonoBehaviour
                     meshrenders[i].materials = IslandMaterials;
             }
         }
-    }*/
+    }
 }
