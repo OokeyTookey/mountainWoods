@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wander : Node
+public class Wander1 : Node
 {
     Vector3 displacement;
-    float timer = 4;
+    float timer;
     public Vector3 circleCenter;
 
     public override Result Execute(Enemy owner)
@@ -19,12 +19,11 @@ public class Wander : Node
 
             // displacement.y = owner.transform.position.y;
             Debug.Log(displacement);
-            Debug.Log("hello");
+
             owner.transform.LookAt(displacement);
             timer = 0;
         }
-        //-95.58f, 179.18f, -26.28f
-        owner.Seek(new Vector3(displacement.x, owner.transform.position.y, displacement.z));
+        owner.Seek(displacement);
         //Debug.Log("wander");
         return Result.success;
     }
