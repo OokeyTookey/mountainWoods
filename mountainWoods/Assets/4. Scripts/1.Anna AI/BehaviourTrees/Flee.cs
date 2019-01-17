@@ -7,7 +7,7 @@ public class Flee : Node
     Vector3 steering;
     Vector3 desiredVelo;
     float distanceFromFlee;
-    int force = 1000;
+    int force = 10000;
 
     public override Result Execute(Enemy owner)
     {
@@ -15,7 +15,7 @@ public class Flee : Node
         Debug.DrawLine(owner.transform.position, owner.enemyRB.velocity + owner.transform.position, Color.yellow); //Debug purposes
 
         distanceFromFlee = (owner.transform.position - owner.playerReference.position).magnitude; //Calculates the distance between the sheep and position
-        desiredVelo = (owner.transform.position - owner.playerReference.position).normalized * owner.maxVelo; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
+        desiredVelo = (owner.transform.position - owner.playerReference.position).normalized * owner.maxSpeed; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
         desiredVelo.y = 0;
 
         if (distanceFromFlee > owner.slowingRadius)  
@@ -27,9 +27,9 @@ public class Flee : Node
         owner.enemyRB.velocity = Vector3.ClampMagnitude(owner.enemyRB.velocity, 3); //Clamps the magnitude of the enemy
         owner.enemyRB.AddForce(steering * owner.force); //Moves the character based on the set steering behaviour
 
-        Vector3 directionSheepFace = (owner.transform.position - owner.playerReference.transform.position) * force;
-        directionSheepFace.y = owner.transform.position.y;
-        owner.transform.LookAt(directionSheepFace);
+        Vector3 directionEnemyFace = (owner.transform.position - owner.playerReference.transform.position) * force;
+        directionEnemyFace.y = owner.transform.position.y;
+        owner.transform.LookAt(directionEnemyFace);
 
         return previousResult = Result.success;
     }

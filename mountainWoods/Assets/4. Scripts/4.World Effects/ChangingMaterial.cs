@@ -41,8 +41,7 @@ public class ChangingMaterial : MonoBehaviour
             if (i < firTreeA.Length)
             {
                 meshrenders[i] = firTreeA[i].GetComponent<MeshRenderer>();
-            }
-            
+            } 
         }
     }
 

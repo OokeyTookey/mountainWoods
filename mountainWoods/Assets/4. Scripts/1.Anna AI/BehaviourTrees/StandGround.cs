@@ -6,7 +6,7 @@ public class StandGround : Node {
 
     int counter;
     float distanceFromPlayer;
-    float waitTimer;
+    float waitTimer; 
 
     public override Result Execute(Enemy owner)
     {
@@ -16,7 +16,6 @@ public class StandGround : Node {
 
         if (waitTimer >= 30)
         {
-            counter = 0;
             Debug.Log("<color=red> Stand ground </color>");
             return previousResult = Result.success;
         }
