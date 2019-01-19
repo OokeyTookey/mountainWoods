@@ -40,6 +40,14 @@ public class CameraTweenMainMenu : MonoBehaviour
         Invoke("Stop", 1.0f);
     }
 
+    public void StartWithFisherman()
+    {
+        currentView = views[3];
+        mouseMovement.lockCamera = true;
+        isPressed = true;
+        returnPressed = false;
+    }
+
     void Stop()
     {
         returnPressed = true;
