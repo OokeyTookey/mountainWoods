@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
     [Header("Enemy Class Settings")]
     public float range;
     public float offset;
@@ -14,6 +13,7 @@ public class Enemy : MonoBehaviour
     public float force;
     public float fleeForce;
     public float collisionRange;
+    public GameObject poopPrefabulous;
 
     [Header("Seek Variables")]
     public float distanceFrom;

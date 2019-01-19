@@ -12,7 +12,7 @@ public class TypingText : MonoBehaviour
     string originalText;
     int index = 0;
 
-    void Start()
+    void Awake()
     {
         text = GetComponent<Text>();
         timer = timeDuration;
@@ -22,6 +22,7 @@ public class TypingText : MonoBehaviour
 
     public void SetText(string myText)
     {
+
         originalText = myText;
         text.text = "";
         timer = timeDuration;

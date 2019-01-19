@@ -7,17 +7,27 @@ public class Flee : Node
     Vector3 steering;
     Vector3 desiredVelo;
     float distanceFromFlee;
+    float poopTimer;
 
     public override Result Execute(Enemy owner)
     {
+        poopTimer += Time.deltaTime;
+
+        if (poopTimer >= 3)
+        {
+            Object.Instantiate(owner.poopPrefabulous, owner.transform.position, Quaternion.identity);
+            poopTimer = 0;
+        }
+
         Debug.Log("Flee");
         Debug.DrawLine(owner.transform.position, owner.enemyRB.velocity + owner.transform.position, Color.yellow); //Debug purposes
 
+        owner.maxSpeed = 15;
         distanceFromFlee = (owner.transform.position - owner.playerReference.position).magnitude; //Calculates the distance between the sheep and position
         desiredVelo = (owner.transform.position - owner.playerReference.position).normalized * owner.maxSpeed; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
         desiredVelo.y = 0;
 
-        if (distanceFromFlee > owner.slowingRadius)  
+        if (distanceFromFlee > owner.slowingRadius)
         {
             desiredVelo = Vector3.zero; //Slows down the enemy aka arrival
         }
@@ -26,7 +36,8 @@ public class Flee : Node
         owner.enemyRB.velocity = Vector3.ClampMagnitude(owner.enemyRB.velocity, 3); //Clamps the magnitude of the enemy
         owner.enemyRB.AddForce(steering * owner.force); //Moves the character based on the set steering behaviour
 
-        Vector3 directionEnemyFace = (owner.transform.position - owner.playerReference.transform.position) * (owner.force + owner.fleeForce);
+
+        Vector3 directionEnemyFace = (owner.transform.position - owner.playerReference.transform.position) * owner.force;
         directionEnemyFace.y = owner.transform.position.y;
         owner.transform.LookAt(directionEnemyFace);
 

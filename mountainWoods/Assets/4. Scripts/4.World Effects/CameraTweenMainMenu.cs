@@ -11,7 +11,6 @@ public class CameraTweenMainMenu : MonoBehaviour
     public bool isPressed;
     public bool returnPressed;
     public float transitionSpeed;
-    private IEnumerator coroutine;
 
     void Start()
     {
@@ -26,20 +25,36 @@ public class CameraTweenMainMenu : MonoBehaviour
         isPressed = true;
     }
 
+    public void GoToFarmerWithSheep()
+    {
+        currentView = views[2];
+        mouseMovement.lockCamera = true;
+        isPressed = true;
+        returnPressed = false;
+    }
+
     public void ReturnToPlayer()
     {
         currentView = views[0];
         mouseMovement.lockCamera = false;
+        Invoke("Stop", 1.0f);
+    }
+
+    void Stop()
+    {
         returnPressed = true;
     }
 
     void LateUpdate()
     {
-        if (isPressed  || returnPressed)
+        if (isPressed)
         {
-            transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
-            transform.rotation = Quaternion.Slerp(transform.rotation, currentView.transform.rotation, Time.deltaTime * transitionSpeed);
-            Debug.Log("trasition");
+            if (!returnPressed)
+            {
+                transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
+                transform.rotation = Quaternion.Slerp(transform.rotation, currentView.transform.rotation, Time.deltaTime * transitionSpeed);
+                Debug.Log("trasition");
+            }
         }
     }
 }
