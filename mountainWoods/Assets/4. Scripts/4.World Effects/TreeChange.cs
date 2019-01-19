@@ -46,15 +46,12 @@ public class TreeChange : MonoBehaviour
         }
     }
 
-    void Update()
+    public void PuzzleComplete()
     {
-        if (Input.GetKey(KeyCode.O))
+        if (!pressOnce)
         {
-            if (!pressOnce)
-            {
-                pressOnce = true;
-                StartCoroutine(LerpColour());
-            }
+            pressOnce = true;
+            StartCoroutine(LerpColour());
         }
     }
 

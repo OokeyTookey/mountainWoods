@@ -111,7 +111,7 @@ public class FirstIslandStory : MonoBehaviour
 
     private IEnumerator SheepIsInPen()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         backGroundPanel.SetActive(false);
         cameraTweenMainMenu.ReturnToPlayer();
     }
