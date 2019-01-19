@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class FirstIslandPuzzle : MonoBehaviour
 {
-    GameObject[] Sheep;
-    int numberOfSheep;
-    int currentNumberOfSheep = 0;
     bool movefence;
     public GameObject finishedFenceGO;
+
+    GameObject[] Sheep;
+    GameObject[] destoryedFence;
+
+    int numberOfSheep;
+    public int currentNumberOfSheep = 0;
+
     Vector3 currentFencePosition;
     Vector3 fixedFencePosition;
-    GameObject[] destoryedFence;
 
     void Start()
     {
@@ -31,7 +34,6 @@ public class FirstIslandPuzzle : MonoBehaviour
             for (int i = 0; i < destoryedFence.Length; i++)
             {
                 destoryedFence[i].transform.position = Vector3.Lerp(destoryedFence[i].transform.position, Vector3.zero, Time.deltaTime * 0.001f);
-
             }
         }
     }

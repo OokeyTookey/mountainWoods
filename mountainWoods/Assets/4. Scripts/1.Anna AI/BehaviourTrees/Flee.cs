@@ -8,6 +8,8 @@ public class Flee : Node
     Vector3 desiredVelo;
     float distanceFromFlee;
     float poopTimer;
+    bool runCoRoute = true;
+    List<GameObject> poopList = new List<GameObject>();
 
     public override Result Execute(Enemy owner)
     {
@@ -15,7 +17,7 @@ public class Flee : Node
 
         if (poopTimer >= 3)
         {
-            Object.Instantiate(owner.poopPrefabulous, owner.transform.position, Quaternion.identity);
+            poopList.Add(Object.Instantiate(owner.poopPrefabulous, owner.transform.position, Quaternion.identity));
             poopTimer = 0;
         }
 
@@ -41,6 +43,29 @@ public class Flee : Node
         directionEnemyFace.y = owner.transform.position.y;
         owner.transform.LookAt(directionEnemyFace);
 
+        if (runCoRoute)
+        {
+            owner.StartCoroutine(PoopRemover());
+            Debug.Log("Ran");
+            runCoRoute = false;
+        }
+
         return previousResult = Result.success;
+    }
+
+    IEnumerator PoopRemover()
+    {
+        while (true)
+        {
+            Debug.Log("Running");
+
+            if (poopList.Count > 0)
+            {
+                Debug.Log("Removing ");
+                Object.Destroy(poopList[0]);
+                poopList.RemoveAt(0);
+            }
+            yield return new WaitForSeconds(10);
+        }
     }
 }

@@ -9,22 +9,36 @@ public class FirstIslandStory : MonoBehaviour
     bool talkingToFarm = false;
     bool sheepIn = false;
     TypingText typingTextScript;
+    FirstIslandPuzzle firstIslandScript;
     CameraTweenMainMenu cameraTweenMainMenu;
     public GameObject backGroundPanel;
     string[] currentTextArray;
     public string[] farmerSpeechLostSheep;
     public GameObject farmer;
-    public GameObject player;
+    public GameObject sheepCountUI;
+    Text sheepText;
 
     void Start()
     {
+        if (sheepCountUI != null)
+        {
+            sheepText = sheepCountUI.GetComponent<Text>();
+            sheepCountUI.SetActive(false);
+        }
+
         cameraTweenMainMenu = FindObjectOfType<CameraTweenMainMenu>();
+        firstIslandScript = FindObjectOfType<FirstIslandPuzzle>();
         typingTextScript = backGroundPanel.GetComponentInChildren<TypingText>();
-        backGroundPanel.SetActive(false);
+        backGroundPanel.SetActive(false);  
     }
 
     void Update()
     {
+        if (sheepCountUI != null)
+        {
+            sheepText.text = "Sheep Collected: " + firstIslandScript.currentNumberOfSheep + " /5";
+        }
+            
         if (talkingToFarm)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -58,6 +72,9 @@ public class FirstIslandStory : MonoBehaviour
             talkingToFarm = true;
             cameraTweenMainMenu.GoToFarmer();
             FarmerIntro();
+
+            if (sheepCountUI != null)
+                sheepCountUI.SetActive(true);
         }
 
         if (other.gameObject.tag == "Sheep")
