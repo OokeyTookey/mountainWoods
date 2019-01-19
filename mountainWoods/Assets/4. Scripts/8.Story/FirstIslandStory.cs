@@ -6,17 +6,22 @@ using UnityEngine.UI;
 public class FirstIslandStory : MonoBehaviour
 {
     int counter;
+    Text sheepText;
+
     bool talkingToFarm = false;
     bool sheepIn = false;
+
     TypingText typingTextScript;
     FirstIslandPuzzle firstIslandScript;
     CameraTweenMainMenu cameraTweenMainMenu;
-    public GameObject backGroundPanel;
+
     string[] currentTextArray;
     public string[] farmerSpeechLostSheep;
+    public string[] farmerFinishedQuest;
+
     public GameObject farmer;
     public GameObject sheepCountUI;
-    Text sheepText;
+    public GameObject backGroundPanel;
 
     void Start()
     {
@@ -36,20 +41,20 @@ public class FirstIslandStory : MonoBehaviour
     {
         if (sheepCountUI != null)
         {
-            sheepText.text = "Sheep Collected: " + firstIslandScript.currentNumberOfSheep + " /5";
+            sheepText.text = "Sheep Collected: " + firstIslandScript.currentNumberOfSheep + " /5"; //Prints number of sheep in top right
         }
-            
+
         if (talkingToFarm)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (counter < currentTextArray.Length - 1)
+                if (counter < currentTextArray.Length - 1) //Scrolls through the text array
                 {
                     counter++;
                     typingTextScript.SetText(currentTextArray[counter]);
                 }
 
-                if (counter >= currentTextArray.Length - 1)
+                if (counter >= currentTextArray.Length - 1) //If finished the array then go back to camera using coroutine
                 {
                     StartCoroutine(WaitForLikeAMilasecondToJumpBackToPlayerBecauseTheyKeepSkippingText());
                 }
@@ -60,7 +65,16 @@ public class FirstIslandStory : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                StartCoroutine(SheepIsInPen());
+                if (counter < 5)
+                    StartCoroutine(SheepIsInPen());
+            }
+        }
+
+        if (counter >= 5)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SheepFarmerLastLine();
             }
         }
     }
@@ -101,6 +115,19 @@ public class FirstIslandStory : MonoBehaviour
         typingTextScript.SetText(currentTextArray[counter]);
     }
 
+    void SheepFarmerLastLine()
+    {
+        if (counter >= farmerSpeechLostSheep.Length)
+        {
+            StartCoroutine(FinishedFirstPuzzle());
+        }
+        else
+        {
+            typingTextScript.SetText(currentTextArray[counter]);
+            counter++;
+        }
+    }
+
     private IEnumerator WaitForLikeAMilasecondToJumpBackToPlayerBecauseTheyKeepSkippingText()
     {
         yield return new WaitForSeconds(4f);
@@ -112,6 +139,13 @@ public class FirstIslandStory : MonoBehaviour
     private IEnumerator SheepIsInPen()
     {
         yield return new WaitForSeconds(2f);
+        backGroundPanel.SetActive(false);
+        cameraTweenMainMenu.ReturnToPlayer();
+    }
+
+    private IEnumerator FinishedFirstPuzzle()
+    {
+        yield return new WaitForSeconds(7f);
         backGroundPanel.SetActive(false);
         cameraTweenMainMenu.ReturnToPlayer();
     }

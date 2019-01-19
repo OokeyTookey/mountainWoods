@@ -21,7 +21,6 @@ public class WaypointVisualisation : MonoBehaviour
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(ray, out hit, 1000.0f))
             {
-                Debug.Log(Event.current.mousePosition);
                 Vector3 theNewPosition = hit.point;
             }
         }

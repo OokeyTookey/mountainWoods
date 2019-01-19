@@ -5,11 +5,13 @@ using UnityEngine;
 public class SheepInPen : MonoBehaviour {
 
     public BoxCollider sheepGate;
+    AudioSource audioSource;
     float baaTimer;
     float randomBaa;
 
 	void Start ()
     {
+        audioSource = GetComponent<AudioSource>();
         Physics.IgnoreCollision(sheepGate, GetComponentInChildren<CapsuleCollider>(), true); //one way wall
         randomBaa = Random.Range(3, 6);
     }
@@ -20,7 +22,8 @@ public class SheepInPen : MonoBehaviour {
 
         if (baaTimer >= randomBaa)
         {
-            //PLAY BAAA SOUNAFFECT
+            audioSource.Play();
+            baaTimer = 0;
         }
     }
 
