@@ -17,8 +17,6 @@ public class Wander : Node
             circleCenter = owner.enemyRB.velocity.normalized * owner.offset + owner.transform.position; //Creates the circle center in relation to the enemies position
             circleCenter.y = owner.transform.position.y;
             displacement = circleCenter + new Vector3(Random.Range(-100, 100), 0, Random.Range(-100, 100)).normalized * owner.circleRadius;
-
-            Debug.Log(displacement);
             timer = 0;
         }
         owner.Seek(new Vector3(displacement.x, owner.transform.position.y, displacement.z));

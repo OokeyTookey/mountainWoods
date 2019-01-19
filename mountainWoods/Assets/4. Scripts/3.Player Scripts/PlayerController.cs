@@ -7,11 +7,11 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     public Rigidbody playerRB;
-    public GameObject fenceGate;
-    bool fence = false;
+    CameraFPS mouseMovement;
 
     void Start()
     {
+        mouseMovement = GetComponentInChildren<CameraFPS>();
         Cursor.lockState = CursorLockMode.Locked;
     }
   
@@ -25,38 +25,27 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.W))
+        if (!mouseMovement.lockCamera)
         {
-            playerRB.AddForce(transform.forward * speed);
-        }
+            if (Input.GetKey(KeyCode.W))
+            {
+                playerRB.AddForce(transform.forward * speed);
+            }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            playerRB.AddForce(-transform.forward * speed);
-        }
+            if (Input.GetKey(KeyCode.S))
+            {
+                playerRB.AddForce(-transform.forward * speed);
+            }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            playerRB.AddForce(-transform.right * speed);
-        }
+            if (Input.GetKey(KeyCode.A))
+            {
+                playerRB.AddForce(-transform.right * speed);
+            }
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            playerRB.AddForce(transform.right * speed);
-        }
-
-        if (Input.GetKey(KeyCode.E) && fence)
-        {
-            fenceGate.transform.Rotate(0, -90, 0);
-            fence = false;
+            if (Input.GetKey(KeyCode.D))
+            {
+                playerRB.AddForce(transform.right * speed);
+            }
         }
     }
-
-    private void OnTriggerEnter(Collider other)
-    { 
-        if (other.gameObject.tag == "fenceGate")
-        {
-            fence = true;
-        }
-    } 
 }

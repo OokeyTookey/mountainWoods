@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     public Transform playerReference;
     public Rigidbody enemyRB;
     public float force;
+    public float fleeForce;
     public float collisionRange;
 
     [Header("Seek Variables")]
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour
         Ray rayFromEnemy = new Ray(transform.position + Vector3.up*0.5f+transform.forward, transform.forward);
 
         Debug.DrawRay(rayFromEnemy.origin, transform.forward * collisionRange, Color.yellow);
-        if (Physics.Raycast(rayFromEnemy, out hit, collisionRange))
+        if (Physics.Raycast(rayFromEnemy, out hit, collisionRange, LayerMask.GetMask("SheepColliders")))
         {
             Vector3 v = Vector3.Reflect(enemyRB.velocity, hit.normal);
             Debug.DrawRay(hit.point, v, Color.green);

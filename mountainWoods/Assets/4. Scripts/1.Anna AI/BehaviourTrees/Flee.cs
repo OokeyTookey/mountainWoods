@@ -7,7 +7,6 @@ public class Flee : Node
     Vector3 steering;
     Vector3 desiredVelo;
     float distanceFromFlee;
-    int force = 10000;
 
     public override Result Execute(Enemy owner)
     {
@@ -27,7 +26,7 @@ public class Flee : Node
         owner.enemyRB.velocity = Vector3.ClampMagnitude(owner.enemyRB.velocity, 3); //Clamps the magnitude of the enemy
         owner.enemyRB.AddForce(steering * owner.force); //Moves the character based on the set steering behaviour
 
-        Vector3 directionEnemyFace = (owner.transform.position - owner.playerReference.transform.position) * force;
+        Vector3 directionEnemyFace = (owner.transform.position - owner.playerReference.transform.position) * (owner.force + owner.fleeForce);
         directionEnemyFace.y = owner.transform.position.y;
         owner.transform.LookAt(directionEnemyFace);
 
