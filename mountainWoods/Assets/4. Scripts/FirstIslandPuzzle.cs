@@ -33,7 +33,6 @@ public class FirstIslandPuzzle : MonoBehaviour
                 destoryedFence[i].transform.position = Vector3.Lerp(destoryedFence[i].transform.position, Vector3.zero, Time.deltaTime * 0.001f);
 
             }
-
         }
     }
 
