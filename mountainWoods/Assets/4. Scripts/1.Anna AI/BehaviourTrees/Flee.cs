@@ -35,13 +35,12 @@ public class Flee : Node
         }
 
         steering = desiredVelo - owner.enemyRB.velocity; //Sets the steering behaviour by minusing
-        owner.enemyRB.velocity = Vector3.ClampMagnitude(owner.enemyRB.velocity, 3); //Clamps the magnitude of the enemy
+        var velocity = Vector3.ClampMagnitude(owner.enemyRB.velocity, 3);
+        velocity.y = 0;
+        owner.enemyRB.velocity = new Vector3(0, owner.enemyRB.velocity.y, 0) +velocity; //Clamps the magnitude of the enemy
         owner.enemyRB.AddForce(steering * owner.force); //Moves the character based on the set steering behaviour
-
-
-        Vector3 directionEnemyFace = (owner.transform.position - owner.playerReference.transform.position) * owner.force;
-        directionEnemyFace.y = owner.transform.position.y;
-        owner.transform.LookAt(directionEnemyFace);
+    
+        owner.transform.forward = Vector3.Lerp(owner.transform.forward, velocity, Time.deltaTime);
 
         if (runCoRoute)
         {

@@ -22,7 +22,6 @@ public class TreeChange : MonoBehaviour
 
         rends = this.GetComponentsInChildren<MeshRenderer>();
         particleSystemArray = this.GetComponentsInChildren<ParticleSystem>();
-        //originalParticleColor = new Color(0.3019f, 0.6823f, 0.4078f, 1.0f);
         int f = 0;
 
         for (int i = 0; i < rends.Length; i++)

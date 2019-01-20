@@ -4,25 +4,46 @@ using UnityEngine;
 
 public class WolfPatrol : MonoBehaviour {
 
+    int index;
+    float force = 4;
     public GameObject[] wolfLocations;
     public GameObject playerReference;
-    int index;
+    public GameObject youGotBit;
+    public CanvasGroup canvas;
+    public GameObject sendPlayerBack;
     public bool followPlayer;
-    float force = 5;
+    Vector3 offtset;
+    Rigidbody wolfRB;
+    float timer;
+    bool waitToTele;
 
-    void Start ()
+    private void Start()
     {
-        
-	}
-	
-	void Update ()
+        canvas.alpha = 0;
+
+    }
+
+    void Update ()
     {
+        timer += Time.deltaTime;
+        offtset = new Vector3(playerReference.transform.position.x, playerReference.transform.position.y, playerReference.transform.position.z);
+
+        if (waitToTele)
+        {
+            if (timer >= 3)
+            {
+                timer = 0;
+                waitToTele = false;
+                StartCoroutine(FadePanelOut());
+
+            }
+        }
+
         if (Vector3.Distance(transform.position, wolfLocations[index].transform.position) <= 1)
         {
             if (index < wolfLocations.Length - 1)
             {
                 index++;
-
             }
             else index = 0;
         }
@@ -35,8 +56,8 @@ public class WolfPatrol : MonoBehaviour {
 
         if (followPlayer)
         {
-            transform.LookAt(playerReference.transform.position);
-            transform.position = Vector3.MoveTowards(transform.position, playerReference.transform.position, Time.deltaTime) * force;
+            transform.LookAt(offtset);
+            transform.position = Vector3.MoveTowards(transform.position, playerReference.transform.position, Time.deltaTime * force);
         }
     }
 
@@ -45,8 +66,44 @@ public class WolfPatrol : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             followPlayer = true;
-            Debug.Log("help");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            StartCoroutine(FadePanelIn());
+            followPlayer = false;
+            //youGotBit.SetActive(true);
+            playerReference.transform.position = sendPlayerBack.transform.position;
+            Debug.Log("heywecollided");
+            waitToTele = true;
+            timer = 0;
+        }
+   }
+
+    private IEnumerator FadePanelIn()
+    {
+        float percentage = 0;
+        while (percentage < 1)
+        {
+            percentage += 0.05f;
+            canvas.alpha = percentage;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private IEnumerator FadePanelOut()
+    {
+        float percentage = 1;
+        while (percentage > 0)
+        {
+            percentage -= 0.05f;
+            canvas.alpha = percentage;
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }
+
 

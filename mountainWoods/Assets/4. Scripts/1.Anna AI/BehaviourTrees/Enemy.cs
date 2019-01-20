@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
         enemyRB.AddForce(new Vector3(steering.x, 0, steering.z) * force); //Moves the character based on the set steering behaviour
                                                                           // Ray rayFromEnemy = new Ray(transform.position + transform.forward * 1.5f, transform.forward);
-        Ray rayFromEnemy = new Ray(transform.position + Vector3.up*0.5f+transform.forward, transform.forward);
+        Ray rayFromEnemy = new Ray(transform.position + Vector3.up* 0.5f + transform.forward, transform.forward);
 
         Debug.DrawRay(rayFromEnemy.origin, transform.forward * collisionRange, Color.yellow);
         if (Physics.Raycast(rayFromEnemy, out hit, collisionRange, LayerMask.GetMask("SheepColliders")))
