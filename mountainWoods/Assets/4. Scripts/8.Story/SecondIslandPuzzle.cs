@@ -26,6 +26,7 @@ public class SecondIslandPuzzle : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                print("space pressed talkingToFisherMan");
                 if (counter < currentTextArray.Length - 1) //Scrolls through the text array
                 {
                     counter++;
@@ -34,6 +35,7 @@ public class SecondIslandPuzzle : MonoBehaviour
 
                 if (counter >= currentTextArray.Length - 1) //If finished the array then go back to camera using coroutine
                 {
+                    print("started counter " + counter);
                     StartCoroutine(WaitForLikeAMilasecondToJumpBackToPlayerBecauseTheyKeepSkippingText());
                 }
             }
@@ -59,6 +61,7 @@ public class SecondIslandPuzzle : MonoBehaviour
 
     private IEnumerator WaitForLikeAMilasecondToJumpBackToPlayerBecauseTheyKeepSkippingText()
     {
+        print("STARTED");
         yield return new WaitForSeconds(4f);
         fishermanPanel.SetActive(false);
         cameraTweenMainMenu.ReturnToPlayer();

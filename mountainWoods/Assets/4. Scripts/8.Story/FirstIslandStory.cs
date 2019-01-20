@@ -10,6 +10,7 @@ public class FirstIslandStory : MonoBehaviour
 
     bool talkingToFarm = false;
     bool sheepIn = false;
+    bool displayLastLine = true;
 
     TypingText typingTextScript;
     FirstIslandPuzzle firstIslandScript;
@@ -22,6 +23,7 @@ public class FirstIslandStory : MonoBehaviour
     public GameObject farmer;
     public GameObject sheepCountUI;
     public GameObject backGroundPanel;
+    public GameObject bridgeCollider;
 
     void Start()
     {
@@ -58,23 +60,32 @@ public class FirstIslandStory : MonoBehaviour
                 {
                     StartCoroutine(WaitForLikeAMilasecondToJumpBackToPlayerBecauseTheyKeepSkippingText());
                 }
+                print("Space prssed talkingToFarm");
             }
         }
 
-        if (sheepIn)
+        if (gameObject.tag != "any")
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (sheepIn)
             {
-                if (counter < 5)
-                    StartCoroutine(SheepIsInPen());
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (counter < 5)
+                        StartCoroutine(SheepIsInPen());
+                    print("Space prssed sheepIn");
+                }
             }
-        }
 
-        if (counter >= 5)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (displayLastLine)
             {
-                SheepFarmerLastLine();
+                if (counter >= 5)
+                {
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        SheepFarmerLastLine();
+                        print("Space prssed SheepFarmerLastLine");
+                    }
+                }
             }
         }
     }
@@ -134,6 +145,9 @@ public class FirstIslandStory : MonoBehaviour
         backGroundPanel.SetActive(false);
         cameraTweenMainMenu.ReturnToPlayer();
         gameObject.GetComponent<BoxCollider>().enabled = false;
+
+        if(gameObject.tag == "any")
+            talkingToFarm = false;
     }
 
     private IEnumerator SheepIsInPen()
@@ -145,8 +159,13 @@ public class FirstIslandStory : MonoBehaviour
 
     private IEnumerator FinishedFirstPuzzle()
     {
-        yield return new WaitForSeconds(7f);
+        print("called FinishedFirstPuzzle");
+        yield return new WaitForSeconds(4f);
         backGroundPanel.SetActive(false);
+        bridgeCollider.SetActive(false);
         cameraTweenMainMenu.ReturnToPlayer();
+        talkingToFarm = false;
+        sheepIn = false;
+        displayLastLine = false;
     }
 }

@@ -35,6 +35,7 @@ public class CameraTweenMainMenu : MonoBehaviour
 
     public void ReturnToPlayer()
     {
+        print("returning");
         currentView = views[0];
         mouseMovement.lockCamera = false;
         Invoke("Stop", 1.0f);
@@ -53,6 +54,10 @@ public class CameraTweenMainMenu : MonoBehaviour
         returnPressed = true;
     }
 
+    private void Update()
+    {
+        print("hmmm... " + returnPressed);
+    }
     void LateUpdate()
     {
         if (isPressed)
