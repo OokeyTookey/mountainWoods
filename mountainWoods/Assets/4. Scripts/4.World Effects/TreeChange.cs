@@ -8,7 +8,6 @@ public class TreeChange : MonoBehaviour
     ParticleSystem[] particleSystemArray;
 
     public List<Color> OriginalColors;
-    private IEnumerator coroutine;
     bool pressOnce;
 
     List<Color> originalParticleColor;

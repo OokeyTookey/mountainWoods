@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
     public void Seek(Vector3 targetPosition) //Generic seek code between this object and another position (usually the player)
     {
         Debug.DrawLine(transform.position, enemyRB.velocity + transform.position, Color.red); //Debugging purposes.
-        distanceFrom = (targetPosition - transform.position).magnitude; //Calculates the distance between the sheep and position
         desiredVelo = (targetPosition - transform.position).normalized * maxSpeed; //Get the desired velocity for flee by minusing the target positions (in this case the player) from the attached objects position
         steering = desiredVelo - enemyRB.velocity; //Sets the steering behaviour by minusing
 

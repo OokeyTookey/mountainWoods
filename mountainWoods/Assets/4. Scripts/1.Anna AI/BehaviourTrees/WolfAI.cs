@@ -10,8 +10,7 @@ public class WolfAI : Enemy
     public int wolfCounter;
 
     void Start()
-    {
-        
+    {     
             StalkSelector = new Selector();
             howlSequence = new Sequencer();
 
@@ -27,8 +26,6 @@ public class WolfAI : Enemy
             howlSequence.nodes.Add(new Flee());
 
             parentNode.nodes.Add(new Patrol());
-        
-
     }
 
     public void Update()

@@ -5,8 +5,8 @@ using UnityEngine;
 public class Wander : Node
 {
     Vector3 displacement;
-    float timer = 4;
     public Vector3 circleCenter;
+    float timer = 4;
 
     public override Result Execute(Enemy owner)
     {

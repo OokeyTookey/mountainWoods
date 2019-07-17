@@ -21,7 +21,6 @@ public class Patrol : Node
 
         owner.Seek(randomLocation * owner.force);
 
-        //Debug.DrawLine(owner.transform.position, randomLocation + owner.transform.position, Color.yellow);
         return previousResult = Result.success;
     }
 }

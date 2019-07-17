@@ -22,7 +22,6 @@ public class TypingText : MonoBehaviour
 
     public void SetText(string myText)
     {
-
         originalText = myText;
         text.text = "";
         timer = timeDuration;

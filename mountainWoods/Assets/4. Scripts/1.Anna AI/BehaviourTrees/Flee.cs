@@ -40,7 +40,7 @@ public class Flee : Node
         owner.enemyRB.velocity = new Vector3(0, owner.enemyRB.velocity.y, 0) +velocity; //Clamps the magnitude of the enemy
         owner.enemyRB.AddForce(steering * owner.force); //Moves the character based on the set steering behaviour
     
-        owner.transform.forward = Vector3.Lerp(owner.transform.forward, velocity, Time.deltaTime);
+        owner.transform.forward = Vector3.Lerp(owner.transform.forward, velocity, Time.deltaTime); 
 
         if (runCoRoute)
         {

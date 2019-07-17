@@ -20,7 +20,6 @@ public class WolfPatrol : MonoBehaviour {
     private void Start()
     {
         canvas.alpha = 0;
-
     }
 
     void Update ()
@@ -35,7 +34,6 @@ public class WolfPatrol : MonoBehaviour {
                 timer = 0;
                 waitToTele = false;
                 StartCoroutine(FadePanelOut());
-
             }
         }
 

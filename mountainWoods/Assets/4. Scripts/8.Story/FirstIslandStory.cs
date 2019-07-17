@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class FirstIslandStory : MonoBehaviour
 {
     int counter;
+    float timerChallenge;
     Text sheepText;
+    Text sheepCounter;
 
     bool talkingToFarm = false;
     bool sheepIn = false;
@@ -30,6 +32,7 @@ public class FirstIslandStory : MonoBehaviour
         if (sheepCountUI != null)
         {
             sheepText = sheepCountUI.GetComponent<Text>();
+            sheepText = sheepCountUI.GetComponent<Text>();
             sheepCountUI.SetActive(false);
         }
 
@@ -41,6 +44,7 @@ public class FirstIslandStory : MonoBehaviour
 
     void Update()
     {
+        timerChallenge += Time.deltaTime;
         if (sheepCountUI != null)
         {
             sheepText.text = "Sheep Collected: " + firstIslandScript.currentNumberOfSheep + " /5"; //Prints number of sheep in top right
@@ -97,6 +101,8 @@ public class FirstIslandStory : MonoBehaviour
             talkingToFarm = true;
             cameraTweenMainMenu.GoToFarmer();
             FarmerIntro();
+            timerChallenge = 0;
+            
 
             if (sheepCountUI != null)
                 sheepCountUI.SetActive(true);
@@ -117,6 +123,7 @@ public class FirstIslandStory : MonoBehaviour
         backGroundPanel.SetActive(true);
         currentTextArray = farmerSpeechLostSheep;
         typingTextScript.SetText(currentTextArray[0]);
+        
     }
 
     void SheepFarmer()
